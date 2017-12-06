@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../App'
 import Home from '../page/home'
+import Item from '../page/item'
 
 Vue.use(Router)
 
@@ -13,11 +14,11 @@ export default new Router({
       children:[
         {
           path:'',
-          component:Home
+          component:r => require.ensure([], () => r(require('../page/home')), 'home')
         },
         {
-          path:'item',
-          component:Home
+          path:'/item',
+          component:Item
         }
       ]
     }

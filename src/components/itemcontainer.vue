@@ -8,6 +8,13 @@
       <div class="home_logo item_container_style"></div>
       <router-link to="item" class="start button_style"></router-link>
     </div>
+    <div v-if="fatherComponent=='item'">
+      <div class="item_back item_container_style">
+        <div class="item_list_container" v-if="itemDetail.length>0">
+          <header class="item_title">{{itemDetail[itemNum-1].topic_name}}</header>
+        </div>
+      </div>
+    </div>
   </section>
 
 </template>
@@ -132,8 +139,6 @@
           'itemDetail',
           'timer'
         ]),
-        components:{
 
-        }
     }
 </script>
